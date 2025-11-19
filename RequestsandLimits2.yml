@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+
+  labels:
+    app: webserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webserver
+  template:
+    metadata:
+      name: jenkins-pod
+      labels:
+        app: webserver
+    spec:
+      containers:
+        - name: myjenkins
+          image: jenkins/jenkins
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 200Mi
+...
