@@ -1,0 +1,16 @@
+---
+version: '3'
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: intelliqit
+    ports:
+      - 3306:3306
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+...
+
