@@ -12,7 +12,7 @@ spec:
       nodePort: 30008
       port: 80
   selector:
-    app: proxy
+    app: webserver
 ...
 
 

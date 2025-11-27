@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+  labels:
+    author: intelliqit
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:  
+    storage: 10G
+  hostPath:
+    path: /home/maverickram220/manifest/volumes
+...
