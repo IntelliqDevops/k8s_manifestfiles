@@ -2,20 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: apache-deployment
   labels:
-    app: proxy
+    author: intelliqit
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: proxy
+      app: webserver
   template:
     metadata:
-      name: nginx-pod
+      name: apache-pod
       labels:
-        app: proxy
+        app: webserver
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.28
+        - name: apache
+          image: httpd
+...

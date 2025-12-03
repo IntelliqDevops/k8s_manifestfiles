@@ -2,17 +2,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeport-service
+  name: nginx-service
   labels:
-    app: myservice
+    author: intelliqit
 spec:
-  type: NodePort
   ports:
     - targetPort: 80
-      nodePort: 30008
       port: 80
   selector:
     app: proxy
 ...
-
-
